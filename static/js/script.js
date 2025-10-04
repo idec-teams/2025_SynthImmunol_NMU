@@ -1,6 +1,6 @@
 
 // 控制台日志开关
-window.ENABLE_CONSOLE_LOG = false;
+window.ENABLE_CONSOLE_LOG = true;
 (function () {
     const originalLog = console.log;
     console.log = function (...args) {
