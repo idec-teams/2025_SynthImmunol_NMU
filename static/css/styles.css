@@ -17399,7 +17399,7 @@ h6,
 }
 
 .page-docs-notebook .note-content-wrap .note-content {
-    height: 68.75rem;
+    height: 70vh;
     overflow-y: auto;
     font-size: 1.5rem;
     font-weight: 400;
@@ -17411,7 +17411,8 @@ h6,
 }
 
 .page-docs-notebook .empty-init .note-content {
-    margin: 12rem 0 0;
+    display: flex;
+    align-items: center;
     font-weight: 700;
     font-size: 3.5rem;
     text-align: center
