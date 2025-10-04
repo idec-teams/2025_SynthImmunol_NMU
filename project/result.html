@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang=en-us>
+
+<head>
+  <meta charset=utf-8>
+  <meta name=viewport content="width=device-width,initial-scale=1">
+  <meta http-equiv=X-UA-Compatible content="IE=edge">
+  <meta name=generator content="Wowchemy 5.6.0 for Hugo">
+  <link href=../static/css/styles.css rel=stylesheet>
+  <meta name=description
+    content="
+De novo rational design: By integrating RFdiffusion and AlphaFold3, we successfully generated IL-2 mimetics that selectively bind IL-2Rβ/γ while sparing IL-2Rα, thereby overcoming the intrinsic limitations of native IL-2 therapy associated with Treg expansion and systemic toxicity.
+Acid-responsive engineering: Incorporation of the pH-sensitive GALA peptide enabled selective IL-2Rβ/γ oligomerization under acidic tumor microenvironments, conferring conditional activation exclusively in low-pH settings.
+Enhanced effector cell potency: The engineered acid-responsive IL-2R agonists markedly promoted NK and CAR-NK cell proliferation, activation, and effector molecule secretion, achieving superior anti-tumor cytotoxicity compared with native IL-2.">
+  <link rel=alternate hreflang=en-us href=https://valadohaeris25.github.io/project/result />
+  <meta name=theme-color content="#000000">
+  <link rel=stylesheet href=../static/css/font-icon.css media=print
+    onload='this.media="all"'>
+  <link rel=stylesheet href=../static/css/academicons.min.css
+    integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA=="
+    crossorigin=anonymous media=print onload='this.media="all"'>
+  <link rel=stylesheet href=../static/css/styles.css>
+  <link rel=stylesheet href=../static/css/github-light.min.css title=hl-light media=print onload='this.media="all"'>
+  <link rel=stylesheet href=../static/css/dracula.min.css title=hl-dark media=print onload='this.media="all"' disabled>
+  <link rel=icon type=image/png href=/media/icon_hu2995325950933355676.png>
+  <link rel=apple-touch-icon type=image/png href=/media/icon_hu2331250216965946225.png>
+  <link rel=canonical href=https://valadohaeris25.github.io/project/result />
+  <meta property="twitter:card" content="summary">
+  <meta property="og:site_name" content="SUMTHIMMUNOL_NMU">
+  <meta property="og:url" content="https://valadohaeris25.github.io/project/result/">
+  <meta property="og:title" content="SUMTHIMMUNOL_NMU">
+  <meta property="og:description"
+    content="
+  
+
+
+De novo rational design: By integrating RFdiffusion and AlphaFold3, we successfully generated IL-2 mimetics that selectively bind IL-2Rβ/γ while sparing IL-2Rα, thereby overcoming the intrinsic limitations of native IL-2 therapy associated with Treg expansion and systemic toxicity.
+Acid-responsive engineering: Incorporation of the pH-sensitive GALA peptide enabled selective IL-2Rβ/γ oligomerization under acidic tumor microenvironments, conferring conditional activation exclusively in low-pH settings.
+Enhanced effector cell potency: The engineered acid-responsive IL-2R agonists markedly promoted NK and CAR-NK cell proliferation, activation, and effector molecule secretion, achieving superior anti-tumor cytotoxicity compared with native IL-2.
+
+
+
+
+
+
+
+
+
+  
+
+1.	Developing peptide for selectively binding of IL-2Rβ and IL-2Rγ via de novo design
+Based on the natural binding sites between IL-2 and IL-2Rβ and γ (Fig. 1a), we employed RFdiffusion to perform de novo design, generating 100 mimics with high affinity for IL-2Rβ or γ but low affinity for IL-2Rα respectively, each with a length ranging from 46-65 amino acids (Fig. 1b and Extended Data Table 1 and 2). Selection was based on the principle that lower docking scores indicate higher binding affinity. To avoid high affinity for IL-2Rα, sequences exhibiting docking scores below -218 with IL-2Rβ, yet above -215 with IL-2Rα, including B0, B34, and B51 were selected (Extended Data Table 3). Meanwhile, sequences with scores lower than -240 against IL-2Rγ but higher than -245 against IL-2Rα, namely G9, G16, G26, G32, G35, G42, G57, G63, G71, G88, and G90, were included (Extended Data Table 4).">
+  <meta property="og:image" content="https://valadohaeris25.github.io/media/logo_hu16718177099216391851.png">
+  <meta property="twitter:image" content="https://valadohaeris25.github.io/media/logo_hu16718177099216391851.png">
+  <meta property="og:locale" content="en-us">
+  <title>SUMTHIMMUNOL_NMU</title>
+  <link href=../static/css/bootstrap-icons.min.css rel=stylesheet>
+</head>
+
+<body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class="page-wrapper scroll_at_top"
+  data-wc-page-id=31946c35ef38c35b86267aa3add37df5>
+  <script src=../static/js/wowchemy-init.min.1ee5462d74c6c0de1f8881b384ecc58d.js></script>
+  <aside class=search-modal id=search>
+    <div class=container>
+      <section class=search-header>
+        <div class="row no-gutters justify-content-between mb-3">
+          <div class=col-6>
+            <h1>Search</h1>
+          </div>
+          <div class="col-6 col-search-close"><a class=js-search href=# aria-label=Close><i
+                class="fas fa-times-circle text-muted" aria-hidden=true></i></a></div>
+        </div>
+        <div id=search-box><input name=q id=search-query placeholder=Search... autocapitalize=off autocomplete=off
+            autocorrect=off spellcheck=false type=search class=form-control aria-label=Search...></div>
+      </section>
+      <section class=section-search-results>
+        <div id=search-hits></div>
+      </section>
+    </div>
+  </aside>
+  <div class=page-header>
+  <header class=header--fixed>
+    <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id=navbar-main>
+      <div class=container-xl>
+        <div class="d-none d-lg-inline-flex"><a class=navbar-brand href= /><img
+            src=/static/picture/logo_hu14042517398967657203.png alt=SUMTHIMMUNOL_NMU></a></div><button type=button
+          class=navbar-toggler data-bs-toggle=collapse data-bs-target=#navbar-content aria-controls=navbar-content
+          aria-expanded=false aria-label="Toggle navigation">
+          <span><i class="fas fa-bars"></i></span></button>
+        <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+          <a class=navbar-brand href= />
+          <img
+            src=/static/picture/logo_hu14042517398967657203.png alt=SUMTHIMMUNOL_NMU>
+          </a></div>
+        <div class="navbar-collapse main-menu-item collapse justify-content-end" id=navbar-content>
+          <ul class="navbar-nav d-md-inline-flex">
+            <li class=nav-item><a class=nav-link href=/index.html data-target=index.html><span>Home</span></a></li>
+            <li class="nav-item dropdown"><a href=# class="nav-link dropdown-toggle" role=button data-bs-toggle=dropdown
+                aria-expanded=false><span>Project</span><span class=caret></span></a>
+              <ul class=dropdown-menu>
+                <li><a class=dropdown-item href=/project/background.html><span>Background</span></a></li>
+                <li><a class=dropdown-item href=/project/design.html data-target=project/design><span>Design</span></a>
+                </li>
+                <li><a class=dropdown-item href=/project/result.html data-target=project/result><span>Result</span></a>
+                </li>
+                <li><a class=dropdown-item href=/project/report.pdf target="_blank"
+                    ><span>Report</span></a></li>
+                <li><a class=dropdown-item href=/project/supplementary.pdf target="_blank"
+                    ><span>Supplementary information</span></a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown"><a href=# class="nav-link dropdown-toggle" role=button data-bs-toggle=dropdown
+                aria-expanded=false><span>Team</span><span class=caret></span></a>
+              <ul class=dropdown-menu>
+                <li><a class=dropdown-item href=/team/member.html data-target=team/member><span>Member</span></a></li>
+                <li><a class=dropdown-item href=/team/community_contribution.html
+                    data-target=team/community_contribution><span>Community contribution</span></a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown"><a href=# class="nav-link dropdown-toggle" role=button data-bs-toggle=dropdown
+                aria-expanded=false><span>Documentation</span><span class=caret></span></a>
+              <ul class=dropdown-menu>
+                <li><a class=dropdown-item href=/documentation/notebook.html
+                    data-target=documentation/notebook><span>Notebook</span></a></li>
+                <li><a class=dropdown-item href=/documentation/protocol.html
+                    data-target=documentation/protocol><span>Protocol</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2"></ul>
+      </div>
+    </nav>
+  </header>
+</div>
+  <div class="main-content-wrap page_project_result">
+    <div class=page-body>
+      <div class=project-page-wrap>
+        <div class=top-image><img src=../static/picture/p-result.png></div>
+        <div class=main-bg>
+          <div class=container>
+            <div class=common-text-content-wrap>
+              <div class=short-code-image><img src=../static/picture/r1.png style="width:60%"></div>
+              <ol>
+                <li>De novo rational design: By integrating RFdiffusion and AlphaFold3, we successfully generated IL-2
+                  mimetics that selectively bind IL-2Rβ/γ while sparing IL-2Rα, thereby overcoming the intrinsic
+                  limitations of native IL-2 therapy associated with Treg expansion and systemic toxicity.</li>
+                <li>Acid-responsive engineering: Incorporation of the pH-sensitive GALA peptide enabled selective
+                  IL-2Rβ/γ oligomerization under acidic tumor microenvironments, conferring conditional activation
+                  exclusively in low-pH settings.</li>
+                <li>Enhanced effector cell potency: The engineered acid-responsive IL-2R agonists markedly promoted NK
+                  and CAR-NK cell proliferation, activation, and effector molecule secretion, achieving superior
+                  anti-tumor cytotoxicity compared with native IL-2.</li>
+              </ol>
+              <div class=short-code-image><img src=../static/picture/r2.png style="width:40%"></div>
+              <h1 id=1developing-peptide-for-selectively-binding-of-il-2rβ-and-il-2rγ-via-de-novo-design class="times_new_roman">1. Developing
+                peptide for selectively binding of IL-2Rβ and IL-2Rγ via de novo design</h1>
+              <p>Based on the natural binding sites between IL-2 and IL-2Rβ and γ (Fig. 1a), we employed RFdiffusion to
+                perform de novo design, generating 100 mimics with high affinity for IL-2Rβ or γ but low affinity for
+                IL-2Rα respectively, each with a length ranging from 46-65 amino acids (Fig. 1b and Extended Data Table
+                1 and 2). Selection was based on the principle that lower docking scores indicate higher binding
+                affinity. To avoid high affinity for IL-2Rα, sequences exhibiting docking scores below -218 with IL-2Rβ,
+                yet above -215 with IL-2Rα, including B0, B34, and B51 were selected (Extended Data Table 3). Meanwhile,
+                sequences with scores lower than -240 against IL-2Rγ but higher than -245 against IL-2Rα, namely G9,
+                G16, G26, G32, G35, G42, G57, G63, G71, G88, and G90, were included (Extended Data Table 4).</p>
+              <p>Through visual inspection with PyMOL to obtain the tightly packed helical bundles with a high
+                likelihood of expression as recombinant proteins, we ultimately selected B0, B34, and B51, along with
+                G9, G16, G35, G42, G57, and G71 based on their binding interface to the IL-2R (Fig. 1c). However, the
+                results indicated that most amino acids primarily contributed to structural stability rather than
+                mediating IL-2R binding. Therefore, candidate sequences were truncated to 20 residues directly involved
+                in binding interface contacts, whereas B34 was retained as a 39-amino acid construct to preserve its
+                dispersed interaction sites (Fig. 1d and Extended Data Table 5 and 6).</p>
+              <div class=short-code-image><img src=../static/picture/r3.png></div>
+              <p><strong>Fig. 1 | De novo design and selection of the IL-2 mimics. a,</strong> Structure of IL-2
+                (cartoon representation) in complex with the IL-2Rαβγ (surface representation) (PDB ID: 2B5I) with their
+                binding interfaces. <strong>b</strong>, Schematic illustration of the design and score verification
+                process for RFdiffusion conjugates. Amino acid residue &ldquo;noise&rdquo; is processed via the
+                RFdiffusion model to generate synthetic proteins with diverse geometries for β and γ bait protein
+                respectively. As for the binding of bait protein to IL-2, molecular docking (via HDOCK) and structural
+                prediction (via AF3) are conducted, followed by scoring to determine the optimal result, which is then
+                visualized through PyMOL. <strong>c</strong>, The front view of the binding sites between screened
+                mimics with IL-2Rβ and γ separately. <strong>d</strong>, Binding interfaces between the trimmed
+                sequences and the IL-2Rβ and γ respectively, with the box zooming in to show the amino acids at the
+                binding site (stick representation).</p>
+              <h1 id=2screening-and-affinity-evaluation-of-il-2rβγ-agonists class="times_new_roman">2. Screening and affinity evaluation of
+                IL-2Rβγ agonists</h1>
+              <p>G9, G16, G35, G42, G57, and G71, together with their reverse counterparts, were conjugated via a
+                flexible linker and fused with a glycosylphosphatidylinositol (GPI) anchor to retain IL-2 mimics on the
+                cell surface, while incorporation of a Flag tag enabled subsequent detection and isolation, collectively
+                facilitating NK cell activation (Fig. 2a) Lentiviral transduction of NK-92 cells generated a library of
+                36 variants, each expressing a distinct IL-2 mimic. To identify the specific sequences that promote NK
+                cell proliferation, the library was seeded into 96-well plates at one cell per well and cultured under
+                cytokine-free conditions. Expanded clones were subsequently harvested and subjected to sequencing (Fig.
+                2a), which revealed significant enrichment of B34G35R, B51G35R, and B51G9 compared with other constructs
+                (Fig. 2b).</p>
+              <p>To define the protein-protein interfaces for residue-wise flexibility (B-factor), electrostatic, and
+                van der Waals interaction energy fluctuations, molecular dynamics (MD) simulations were employed to
+                evaluate the affinity of designed IL-2 mimics towards the IL-2Rβγ subunits. Higher RMSD values in the
+                B34G35R complex indicated an unstable receptor binding mode, in contrast to the lower RMSD and enhanced
+                stability observed in the B51G35R complexes (Fig. 2c). The radar plot based on flexibility and
+                conformational entropy features revealed that B51G9 exhibited the lowest conformational diversity and
+                minimal interaction energy fluctuations at the binding interface, suggesting high structural consistency
+                and binding stability, yet a higher B-factor suggested greater atomic uncertainty (Fig. 2d). By
+                contrast, B51G35R showed consistently lower values across all three dimensions, suggesting superior
+                structural stability and identifying it as one of the most promising complexes (Fig. 2d). Bio-layer
+                interferometry (BLI) characterization of binding to IL-2Rα and IL-2Rβγ immobilized on Octet sensor chips
+                revealed KD values separately. In the screening for mimics with low IL-2Rα but high IL-2Rβγ affinity,
+                B51G35R demonstrated the weakest binding to IL-2Rα, substantially below IL-2 (Fig. 2e), while
+                demonstrating the highest affinity toward IL-2Rβ and IL-2Rγ among all tested variants (Fig. 2f).
+                Collectively, these findings establish B51G35R as a selective IL-2Rβγ agonist that minimizes IL-2Rα
+                interaction while preserving high-affinity binding to IL-2Rβγ.</p>
+              <div class=short-code-image><img src=../static/picture/r4.png></div>
+              <p><strong>Fig. 2 | Proliferation activity of the eCAR NK-92 cells. a,</strong> Construction of four eCARs
+                targeting different antigens (CD19, CD20, GPC3 and MSLN). <strong>b-f</strong>, Proliferation activity
+                of eCAR NK-92 cells in response to tumor cells stimulation. Tumor cells treated with mitomycin C,
+                including Raji (20 µM), K562(20 µM), HepG2 (30 µM) and AsPC-1 (30 µM). Data are presented as mean ± SD
+                of five independent biological replicates. <strong>g</strong>, eCAR NK-92 cell activation pathway of
+                JAK/STAT and MAPK indicated by Western Blot.</p>
+              <h1 id=3selective-il-2rβγ-agonists-modulate-functions-of-effector-cells class="times_new_roman">3. Selective IL-2Rβγ agonists
+                modulate functions of effector cells</h1>
+              <p>After confirming their binding affinity to IL-2R, we systematically evaluated B34G35R, B51G35R, and
+                B51G9 for their capacity to enhance NK cell proliferation, activation, and cytotoxicity, thereby
+                identifying the most effective IL-2 mimics. Among these, B51G35R demonstrated superior potency in
+                driving NK cell expansion compared with native IL-2 (Fig. 3a), and its advantage was further validated
+                in YT cells (Fig. 3b). We further armed αMSLN CAR-NK and αHER2 CAR-T cells with the IL-2 mimics and
+                measured their tumor-killing activity. The heatmap showed that cells expressing B51G35R achieved optimal
+                killing efficacy, outperforming the other two constructs. In contrast, B51G9 only marginally enhanced
+                cytotoxic activity (Fig. 3c).</p>
+              <p>Effector cell activation and effector molecule secretion were concurrently evaluated. NK cells
+                stimulated with B51G35R displayed markedly enhanced activity, as indicated by increased expression of
+                the degranulation marker CD107a and the activation marker CD69 (Fig. 3d-e). Both B51G9 and B51G35R
+                stimulation significantly increased perforin (PFN) production compared with IL-2. Notably, B51G9 induced
+                substantially higher granzyme B (GrB) secretion than B51G35R, suggesting distinct functional profiles
+                between the mimics (Fig. 3f).</p>
+              <div class=short-code-image><img src=../static/picture/r5.png></div>
+              <p><strong>Fig. 3 | Proliferation and in vitro antitumor effect of the screened sequences. a-b,</strong>
+                Proliferation activity of NK-92 cells and YT cells in response to B34G51, B34G35, B51G9 and IL-2
+                stimulation. Data are presented as mean ± SD of three independent biological replicates (*P &lt; 0.05).
+                c, The cytotoxic capabilities of αMSLN CAR-NK and αHER2 CAR-T expressing IL-2 mimics. DMSO was utilized
+                as positive control. d-e, CD107a and CD69 expression were analyzed in effector cells which equipped with
+                IL-2 and its mimics. Data are representative of three independent experiments (**P &lt; 0.01, *P &lt;
+                0.05). f, The PFN and GrB expression levels were assessed by flow cytometry. Data are representative of
+                at least three independent experiments (**P &lt; 0.01, *P &lt; 0.05).</p>
+              <h1 id=4design-and-affinity-characterization-of-acid-responsive-il-2-mimics class="times_new_roman">4. Design and affinity
+                characterization of acid-responsive IL-2 Mimics</h1>
+              <p>To address the limitation that IL-2 fails to promote receptor oligomerization under acidic conditions,
+                the linker in B34G35R, B51G35R, and B51G9 were substituted with GALA4, GALA5, or GALA6 (Fig. 4a). The
+                GALA peptide is a synthetically designed, pH-sensitive motif that transitions from a random coil to an
+                amphipathic α-helix as the pH decreases from 7.0 to 5.0, a property anticipated to drive receptor
+                oligomerization specifically in acidic environments (Fig. 4b). Using AF3, we first assessed the binding
+                interfaces between IL-2Rβγ and the GALA-modified mimics. The results demonstrated that incorporation of
+                the GALA peptide neither compromised structural positioning nor interfered with receptor-binding
+                interactions. Guided by AF3 predicted TM-score (ptm) and inter-residue predicted TM-score (iptm), the
+                GALA5 variant was selected for further experimental validation (Extended Data Table 7). The resulting
+                constructs incorporating GALA5 as a linker are hereafter referred to as B34G35R-G, B51G35R-G, and
+                B51G9-G (Fig. 4c). Subsequent BLI assays under acidic conditions (pH 6.4, acidified with 15 mM lactate)
+                revealed that all three mimics exhibited higher IL-2Rβγ affinity than IL-2, with B34G35R-G (52 pM)
+                displaying substantially stronger binding than the other variants, indicating that GALA-modified IL-2
+                mimics possess acid-responsive binding capability (Fig. 4d).</p>
+              <div class=short-code-image><img src=../static/picture/r6.png></div>
+              <p><strong>Fig. 4 | GALA replacement and detection of binding affinity under acidic condition.</strong> a,
+                Schematic overview of the replacement of GALA, affinity assessment through AF3 structure prediction and
+                BLI assay, and functional testing including activation, cytotoxicity and effector molecules of the
+                designed mimics with where the flexible GGGGS peptide was substituted with GALA4, GALA 5, GALA 6 (4, 5,
+                and 6 represent the number of EALA repeat units in the GALA peptide). <strong>b</strong>, General
+                depiction of the conformational transition of GALA between extended state at pH=7.4 and contracted state
+                at pH=6.4. <strong>c</strong>, The front view of the binding sites between B34G35R-G, B51G35R-G, and
+                B51G9-G with IL-2Rβγ, with the box zooming in to show the amino acids at the binding site (stick
+                representation). <strong>d</strong>, BLI characterization of the binding of B34G35R-G, B51G35R-G, and
+                B51G9-G to IL-2Rβγ.</p>
+              <h1
+                id=5impact-of-acid-responsive-il-2r-agonists-on-effector-cell-receptor-oligomerization-and-functional-potency class="times_new_roman" >
+                5. Impact of acid-responsive IL-2R agonists on effector cell receptor oligomerization and functional
+                potency</h1>
+              <p>We evaluated the efficiency of IL-2Rβ/γ oligomerization induced by GALA-linked IL-2 mimics under acidic
+                conditions using the NanoBiT protein complementation assay where the LargeBit and SmallBit fragments
+                were fused to IL-2Rβ and IL-2Rγ, respectively (Fig. 5a). Upon stimulation with the IL-2, B34G35R-G,
+                B51G35R-G and B51G9-G respectively, NanoBiT complementation signals revealed pronounced co-clustering of
+                IL-2Rβ and IL-2Rγ at the plasma membrane compared with IL-2 stimulation alone, visualized as distinct
+                fluorescent puncta. These findings demonstrate that B34G35R-G, B51G35R-G, and B51G9-G, effectively
+                promote IL-2R oligomerization under acidic conditions (pH=6.4) (Fig. 5b).</p>
+              <p>We evaluated the ability of B34G35R-G, B51G35R-G, and B51G9-G to activate effector cells under
+                different pH conditions. At physiological pH (7.4), B34G35R, B51G35R, and B51G9 strongly induced STAT5
+                phosphorylation, whereas B51G9-G triggered only mild IL-2R signaling in NK-92 cells, and neither
+                B34G35R-G nor B51G35R-G elevated STAT5 phosphorylation (Fig. 5c, left). In contrast, under acidic
+                conditions (pH 6.4), B34G35R-G and B51G35R-G induced robust STAT5 phosphorylation in NK cells, whereas
+                unmodified constructs completely lost activity (Fig. 5c, right).</p>
+              <p>Assessment of NK cell expansion revealed that at physiological pH (7.4), the engineered variants
+                B34G35R-G, B51G35R-G, and B51G9-G failed to enhance the tumor-killing efficacy of NK-92 cells. Notably,
+                their activity was exclusively triggered under acidic conditions (pH 6.4). Among them, B51G35R-G
+                exhibited the most potent proliferative capacity, markedly surpassing B34G35R-G and B51G9-G. In sharp
+                contrast, the proliferative activity driven by the non-GALA-modified variants and IL-2 was abolished at
+                pH 6.4 (Fig. 5d). We next evaluated the anti-tumor activity of αMSLN CAR-NK cells expressing these
+                acid-responsive IL-2R agonists. Critically, only under an acidic environment did B34G35R-G and B51G35R-G
+                substantially enhance NK cell cytotoxicity, significantly exceeding their non-GALA-modified counterparts
+                (Fig. 5e). Consistently, changes in CD107a expression as well as PFN and GrB production mirrored these
+                trends (Fig. 5f-h). Collectively, these findings demonstrate that B34G35R-G, B51G35R-G, and B51G9-G are
+                acid-responsive IL-2R agonists capable of significantly enhancing effector cell cytotoxicity under
+                acidic conditions.</p>
+              <div class=short-code-image><img src=../static/picture/r7.png></div>
+              <p><strong>Fig. 5 | Effects of B34G35R-G, B51G35R-G, and B51G9-G on NK cell proliferation and in vitro
+                  anti-tumor activity. a,</strong> Illustration of the NanoBiT protein complementation assay. The
+                oligomerization induced by fusing LargeBit and SmallBit to IL-2Rβ and IL-2Rγ was verified through
+                immunofluorescence. <strong>b</strong>, Fluorescence microscopy was utilized to capture images of the NK
+                cells. The green fluorescence indicated the NK-92 cells and the blue fluorescence indicated DAPI, scale
+                bar = 20 μM. <strong>c</strong>, Expansion fold of NK-92 cells and YT cells at pH=7.4 and pH=6.4 over
+                days post seeding for different constructs (B51G35R-G, B34G35R-G, B51G9-G, B51G35R, B34G35R, B51G9,
+                IL-2). Data are presented as mean ± SD of three independent biological replicates. <strong>d</strong>,
+                LDH tests for Lysis detection of NK cells expressing IL-2, B51G35R, B51G35R-G, B34G35R, B34G35R-G,
+                B51G9, B51G9-G separately at both pH=6.4 and pH=7.4. Data are representative of at least three
+                independent experiments. <strong>e-g</strong>, Flow cytometry for CD107a, PFN, GrB detection of NK cells
+                with IL-2 and IL-2 mimics separately at both pH=6.4 and pH=7.4. Data are representative of at least
+                three independent experiments (*P &lt; 0.05, **P &lt; 0.01, ***P &lt; 0.001).</p>
+            </div>
+          </div>
+          <div class=bottom-img-wrap></div>
+        </div>
+      </div>
+    </div>
+  <div class=page-footer>
+    <div class=container>
+      <div class=nav-footer>
+        <div class=nav-footer-center>&nbsp;</div>
+        <div class=nav-footer-right>&nbsp;</div>
+      </div>
+    </div>
+  </div>
+  <div id=back_top_img_btn class=back_top><img src=/static/picture/goup.png></div>
+  </div>
+  <script src=../static/js/vendor-bundle.min.c87a3ee09b90a2d201ed503217de637d.js></script>
+  <script id=search-hit-fuse-template type=text/x-template>
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  <script src=../static/js/fuse.min.js
+    integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw=="
+    crossorigin=anonymous></script>
+  <script src=../static/js/jquery.mark.min.js
+    integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg=="
+    crossorigin=anonymous></script>
+  <script id=page-data type=application/json>{"use_headroom":true}</script>
+  <script src=../static/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js type=module></script>
+  <script src=../static/js/wowchemy.min.da4dbf53e12727fb8e8a8b2f9a8483f4.js></script>
+  <script src="../static/js/jquery.min.js"></script>
+  <script src="../static/js/script.js"></script>
+</body>
+
+</html>
