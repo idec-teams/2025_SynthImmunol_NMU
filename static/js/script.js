@@ -723,7 +723,7 @@ function initNotebookPage() {
         if (!noteContentWrap.querySelector('.empty-init-content')) {
             const tipDiv = document.createElement('div');
             tipDiv.className = 'note-content empty-init-content';
-            tipDiv.textContent = 'CLICK ON THE RED TAB TO VIEW THE INDIVIDUAL LAB RECORDS';
+            tipDiv.textContent = 'CLICK ON THE GREEN TAB TO VIEW THE INDIVIDUAL LAB RECORDS';
             noteContentWrap.appendChild(tipDiv);
         }
     }
