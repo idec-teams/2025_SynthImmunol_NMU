@@ -1,9 +1,19 @@
 
-
+// 控制台日志开关
+window.ENABLE_CONSOLE_LOG = false;
+(function () {
+    const originalLog = console.log;
+    console.log = function (...args) {
+        if (window.ENABLE_CONSOLE_LOG) {
+            originalLog.apply(console, args);
+        }
+    };
+})();
 // 运行
 $(document).ready(function () {
+
     /* 页面加载时统一插入 */
-    commonFunction();
+    // commonFunction();
     // 初始化回到顶部按钮
     initBackToTopButton();
     // 初始化鼠标跟随特效
@@ -16,21 +26,22 @@ $(document).ready(function () {
     initMainMenuActiveState();
     // 初始化notebook页面功能
     initNotebookPage();
+
 });
 
-async function commonFunction() {
-    console.log('commonFunction');
-    // 加载 header 和 footer
-    await loadPartial('header', '/partials/header.html');
-    await loadPartial('footer', '/partials/footer.html');
-}
+// async function commonFunction() {
+//     console.log('commonFunction');
+//     // 加载 header 和 footer
+//     await loadPartial('header', '/partials/header.html');
+//     await loadPartial('footer', '/partials/footer.html');
+// }
 // 加载部分
-async function loadPartial(id, file) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const html = await fetch(file).then(r => r.text());
-    el.innerHTML = html;
-}
+// async function loadPartial(id, file) {
+//     const el = document.getElementById(id);
+//     if (!el) return;
+//     const html = await fetch(file).then(r => r.text());
+//     el.innerHTML = html;
+// }
 
 
 (function () {
@@ -64,7 +75,7 @@ async function loadPartial(id, file) {
 
         // 创建加载图片
         const loadingImg = document.createElement('img');
-        loadingImg.src = '/static/images/loading.gif';
+        loadingImg.src = '/2025_SynthImmunol_NMU/static/images/loading.gif';
         loadingImg.alt = 'Loading...';
         loadingImg.style.cssText = `
             max-width: 400px;
@@ -216,7 +227,7 @@ function initBackToTopButton() {
                         backToTopBtn.style.opacity = '0.4';
                         backToTopBtn.classList.add('show');
                         backToTopBtn.classList.remove('hidden');
-                       
+
                         console.log('显示回到顶部按钮，滚动距离:', scrollTop);
                     }
                 } else {
@@ -267,17 +278,17 @@ function initMouseFollower() {
     }
 
     // 鼠标移动事件
-    document.addEventListener('mousemove', function(e) {
+    document.addEventListener('mousemove', function (e) {
         requestAnimationFrame(() => updateRipplePosition(e.clientX, e.clientY));
     });
 
     // 点击动画效果
-    document.addEventListener('mousedown', function() {
+    document.addEventListener('mousedown', function () {
         ripple.classList.add('ripple-animation');
     });
 
     // 动画结束事件
-    ripple.addEventListener('animationend', function() {
+    ripple.addEventListener('animationend', function () {
         ripple.classList.remove('ripple-animation');
     });
 
@@ -313,25 +324,25 @@ function initDropdownMenus() {
     // 等待header加载完成
     setTimeout(() => {
         console.log('开始初始化下拉菜单...');
-        
+
         // 获取所有下拉菜单
         const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
         console.log('找到下拉菜单数量:', dropdownToggles.length);
-        
+
         dropdownToggles.forEach((toggle, index) => {
             const dropdown = toggle.closest('.dropdown');
             const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-            
+
             if (!dropdownMenu) {
                 console.log('下拉菜单', index, '未找到dropdown-menu');
                 return;
             }
-            
+
             console.log('初始化下拉菜单', index, ':', toggle.textContent.trim());
-            
+
             // 鼠标悬停显示（仅桌面端）
             if (window.innerWidth >= 992) {
-                dropdown.addEventListener('mouseenter', function() {
+                dropdown.addEventListener('mouseenter', function () {
                     console.log('鼠标进入下拉菜单:', toggle.textContent.trim());
                     // 关闭其他打开的下拉菜单
                     document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
@@ -342,40 +353,40 @@ function initDropdownMenus() {
                     // 显示当前下拉菜单
                     dropdownMenu.classList.add('show');
                 });
-                
-                dropdown.addEventListener('mouseleave', function() {
+
+                dropdown.addEventListener('mouseleave', function () {
                     console.log('鼠标离开下拉菜单:', toggle.textContent.trim());
                     dropdownMenu.classList.remove('show');
                 });
             }
-            
+
             // 点击切换（移动端和桌面端都支持）
-            toggle.addEventListener('click', function(e) {
+            toggle.addEventListener('click', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
                 console.log('点击下拉菜单:', toggle.textContent.trim());
-                
+
                 // 关闭其他打开的下拉菜单
                 document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
                     if (menu !== dropdownMenu) {
                         menu.classList.remove('show');
                     }
                 });
-                
+
                 // 切换当前下拉菜单
                 dropdownMenu.classList.toggle('show');
             });
         });
-        
+
         // 点击外部关闭下拉菜单
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             if (!e.target.closest('.dropdown')) {
                 document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
                     menu.classList.remove('show');
                 });
             }
         });
-        
+
         console.log('下拉菜单初始化完成');
     }, 300); // 延迟300ms确保header已加载
 }
@@ -385,7 +396,7 @@ function initScrollFlyAnimation() {
     // 获取所有需要动画的元素
     const flyElements = document.querySelectorAll('.right-fly-content, .left-fly-content');
     const rotatingElements = document.querySelectorAll('.rotating-content');
-    
+
     // 创建Intersection Observer来监听元素是否进入/离开视口
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -415,22 +426,22 @@ function initScrollFlyAnimation() {
         // 添加一些边距，让动画提前触发
         rootMargin: '0px 0px -50px 0px'
     });
-    
+
     // 开始观察所有飞入元素
     flyElements.forEach(element => {
         observer.observe(element);
     });
-    
+
     // 开始观察所有旋转元素
     rotatingElements.forEach(element => {
         observer.observe(element);
     });
-    
+
     console.log('滚动飞入飞出动画初始化完成，共监听', flyElements.length, '个飞入元素和', rotatingElements.length, '个旋转元素');
 }
 
 // 页面加载完成后初始化动画
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initScrollFlyAnimation();
 });
 
@@ -446,7 +457,7 @@ function initSidebarNavigation() {
     // 只选择侧边栏导航链接，排除主菜单的链接
     const navLinks = document.querySelectorAll('.sidebar-nav .nav-link, .sidebar-nav .nav-link-text');
     const sections = document.querySelectorAll('.rotating-content');
-    
+
     // 平滑滚动到指定元素
     function smoothScrollTo(targetId) {
         const targetElement = document.getElementById(targetId);
@@ -458,30 +469,30 @@ function initSidebarNavigation() {
             });
         }
     }
-    
+
     // 为每个导航链接添加点击事件
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            
+
             // 如果是外部链接（不是以#开头的），允许正常跳转
             if (!href.startsWith('#')) {
                 return; // 不阻止默认行为，允许正常跳转
             }
-            
+
             e.preventDefault();
             const targetId = href.substring(1);
-            
+
             // 移除所有激活状态
             navLinks.forEach(l => l.classList.remove('active'));
             // 添加当前激活状态
             this.classList.add('active');
-            
+
             // 滚动到目标元素
             smoothScrollTo(targetId);
         });
     });
-    
+
     // 监听滚动事件，更新激活状态
     function updateActiveNav() {
         let current = '';
@@ -492,7 +503,7 @@ function initSidebarNavigation() {
                 current = section.getAttribute('id');
             }
         });
-        
+
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === '#' + current) {
@@ -500,7 +511,7 @@ function initSidebarNavigation() {
             }
         });
     }
-    
+
     // 节流函数，优化滚动性能
     function throttle(func, wait) {
         let timeout;
@@ -513,15 +524,15 @@ function initSidebarNavigation() {
             timeout = setTimeout(later, wait);
         };
     }
-    
+
     // 监听滚动事件
     window.addEventListener('scroll', throttle(updateActiveNav, 100));
-    
+
     console.log('侧边栏导航初始化完成，共', navLinks.length, '个导航链接');
 }
 
 // 页面加载完成后初始化导航
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initSidebarNavigation();
 });
 
@@ -539,19 +550,19 @@ function initScrollHeaderAnimation() {
     let headerHidden = false;
     let scrollDistance = 0; // 记录滚动距离
     const header = document.querySelector('.header--fixed');
-    
+
     if (!header) return;
-    
+
     // 添加初始可见状态
     header.classList.add('header-visible');
-    
+
     function handleScroll() {
         if (isScrolling) return;
-        
+
         isScrolling = true;
         requestAnimationFrame(() => {
             const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
+
             // 如果滚动距离小于 50px，始终显示头部
             if (currentScrollTop < 50) {
                 header.classList.remove('header-hidden');
@@ -567,11 +578,11 @@ function initScrollHeaderAnimation() {
                         headerHidden = true;
                         scrollDistance = 0; // 重置滚动距离
                     }
-                } 
+                }
                 // 向上滚动时显示头部 - 需要向上滚动超过100px才显示
                 else if (currentScrollTop < lastScrollTop && headerHidden) {
                     scrollDistance += (lastScrollTop - currentScrollTop);
-                    
+
                     if (scrollDistance > 100) {
                         header.classList.remove('header-hidden');
                         header.classList.add('header-visible');
@@ -580,12 +591,12 @@ function initScrollHeaderAnimation() {
                     }
                 }
             }
-            
+
             lastScrollTop = currentScrollTop;
             isScrolling = false;
         });
     }
-    
+
     // 添加滚动事件监听器
     window.addEventListener('scroll', handleScroll, { passive: true });
 }
@@ -594,13 +605,13 @@ function initScrollHeaderAnimation() {
 function initMainMenuActiveState() {
     // 获取当前页面路径
     const currentPath = window.location.pathname;
-    
+
     // 清除所有主菜单的 active 状态
     const mainNavLinks = document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item');
     mainNavLinks.forEach(link => {
         link.classList.remove('active');
     });
-    
+
     // 根据当前路径设置对应的菜单项为 active
     mainNavLinks.forEach(link => {
         const href = link.getAttribute('href');
@@ -609,7 +620,7 @@ function initMainMenuActiveState() {
             const linkPath = href.startsWith('/') ? href : '/' + href;
             if (currentPath === linkPath || currentPath.endsWith(linkPath)) {
                 link.classList.add('active');
-                
+
                 // 如果是下拉菜单项，也要激活其父级菜单
                 const parentDropdown = link.closest('.dropdown');
                 if (parentDropdown) {
@@ -621,7 +632,7 @@ function initMainMenuActiveState() {
             }
         }
     });
-    
+
     console.log('主菜单激活状态初始化完成，当前路径:', currentPath);
 }
 
@@ -631,9 +642,9 @@ function initNotebookPage() {
     if (!window.location.pathname.includes('notebook.html')) {
         return;
     }
-    
+
     console.log('初始化notebook页面功能...');
-    
+
     // 获取所有的note li元素
     const noteItems = document.querySelectorAll('.months-list .month-item');
     const ulElement = document.querySelector('.month-parts.g-label-0');
@@ -641,52 +652,52 @@ function initNotebookPage() {
     const noteContents = document.querySelectorAll('.note-content-wrap .note-content');
 
     const noteContentWrap = document.querySelector('.note-content-wrap');
-    
+
     if (!noteItems.length || !ulElement || !partItems.length) {
         console.log('未找到notebook相关元素');
         return;
     }
-    
+
     console.log('找到', noteItems.length, '个note项目');
     console.log('找到', partItems.length, '个子菜单项');
     console.log('找到', noteContents.length, '个实验内容');
-    
+
     // 为每个note项目添加点击事件
     noteItems.forEach((item, index) => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function () {
             console.log('点击了note', index + 1);
-            
+
             // 移除所有li的active类
             noteItems.forEach(li => li.classList.remove('active'));
-            
+
             // 给当前点击的li添加active类
             this.classList.add('active');
-            
+
             // 更新ul的类名，从g-label-1改为g-label-{序号}
             const newClass = `g-label-${index + 1}`;
             ulElement.className = `month-parts ${newClass}`;
-            
+
             console.log('更新ul类名为:', newClass);
         });
     });
-    
+
     // 为每个子菜单项添加点击事件
     partItems.forEach((partItem, index) => {
-        partItem.addEventListener('click', function(e) {
+        partItem.addEventListener('click', function (e) {
             e.preventDefault();
             console.log('点击了子菜单项', index + 1);
-            
+
             // 移除所有子菜单项的active类
             partItems.forEach(item => item.classList.remove('active'));
-            
+
             // 给当前点击的子菜单项添加active类
             this.classList.add('active');
-            
+
             // 隐藏所有实验内容
             noteContents.forEach(content => {
                 content.style.display = 'none';
             });
-            
+
             // 显示对应的实验内容（如果有的话）
             if (noteContents[index]) {
                 noteContents[index].style.display = 'block';
@@ -698,7 +709,7 @@ function initNotebookPage() {
             }
         });
     });
-    
+
     // 初始化时隐藏所有实验内容，只显示提示信息
     noteContents.forEach(content => {
         content.style.display = 'none';
@@ -716,7 +727,7 @@ function initNotebookPage() {
             noteContentWrap.appendChild(tipDiv);
         }
     }
-    
+
     console.log('notebook页面功能初始化完成');
 }
 
